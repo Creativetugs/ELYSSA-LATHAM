@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elyssa Latham | Poet · Writer · Storyteller</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        warm: {
+                            50: '#faf7f2',
+                            100: '#f3ede2',
+                            200: '#e5d7c3',
+                            300: '#d4bd9f',
+                            400: '#c09d78',
+                            500: '#ad7e54',
+                            600: '#9b6845',
+                            700: '#7e503a',
+                            800: '#674233',
+                            900: '#54382c',
+                            950: '#2d1c16',
+                        },
+                        poetic: {
+                            rose: '#e8b4b8',
+                            slate: '#2c3e50',
+                            sage: '#a3b18a',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        cursive: ['Dancing Script', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .glass-nav {
+            background: rgba(250, 247, 242, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(45, 28, 22, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .hero-pattern {
+            background-color: #faf7f2;
+            background-image: radial-gradient(#d4bd9f 0.75px, transparent 0.75px), radial-gradient(#d4bd9f 0.75px, #faf7f2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+        }
+        .dark .hero-pattern {
+            background-color: #2d1c16;
+            background-image: radial-gradient(#674233 0.75px, transparent 0.75px), radial-gradient(#674233 0.75px, #2d1c16 0.75px);
+        }
+        .quote-border {
+            border-left: 3px solid #c09d78;
+        }
+    </style>
+</head>
+<body class="bg-warm-50 dark:bg-warm-950 text-warm-900 dark:text-warm-100 font-sans transition-colors duration-300 antialiased selection:bg-warm-300 selection:text-warm-950">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-warm-200/60 dark:border-warm-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Brand -->
+                <a href="#home" class="group flex flex-col">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-warm-900 dark:text-warm-50 group-hover:text-warm-600 transition-colors">
+                        ELYSSA LATHAM
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-warm-500 dark:text-warm-400 font-medium -mt-1">
+                        Poet · Writer · Storyteller
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#home" class="text-warm-800 dark:text-warm-200 hover:text-warm-600 dark:hover:text-warm-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-warm-500 hover:after:w-full after:transition-all">Home</a>
+                    <a href="#about" class="text-warm-800 dark:text-warm-200 hover:text-warm-600 dark:hover:text-warm-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-warm-500 hover:after:w-full after:transition-all">About Elyssa</a>
+                    <a href="#book" class="text-warm-800 dark:text-warm-200 hover:text-warm-600 dark:hover:text-warm-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-warm-500 hover:after:w-full after:transition-all">Books & Poetry</a>
+                    <a href="#publications" class="text-warm-800 dark:text-warm-200 hover:text-warm-600 dark:hover:text-warm-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-warm-500 hover:after:w-full after:transition-all">Publications</a>
+                    <a href="#subscribe" class="text-warm-800 dark:text-warm-200 hover:text-warm-600 dark:hover:text-warm-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-warm-500 hover:after:w-full after:transition-all">Subscribe</a>
+                </nav>
+
+                <!-- Navigation Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2 rounded-full text-warm-600 dark:text-warm-300 hover:bg-warm-200/50 dark:hover:bg-warm-800/50 transition-colors" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                    </button>
+                    <a href="#book" class="px-5 py-2.5 rounded-full bg-warm-800 text-warm-50 hover:bg-warm-700 dark:bg-warm-200 dark:text-warm-950 dark:hover:bg-warm-100 font-medium text-sm transition-all transform hover:-translate-y-0.5 shadow-sm">
+                        Explore My Writing
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button id="mobileThemeToggle" class="p-2 rounded-full text-warm-600 dark:text-warm-300 hover:bg-warm-200/50 dark:hover:bg-warm-800/50 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                    </button>
+                    <button id="menuBtn" class="p-2 rounded-lg text-warm-800 dark:text-warm-200 hover:bg-warm-200/50 dark:hover:bg-warm-800/50 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-warm-100 dark:bg-warm-900 border-b border-warm-200 dark:border-warm-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-warm-800 dark:text-warm-100 hover:bg-warm-200 dark:hover:bg-warm-800">Home</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-warm-800 dark:text-warm-100 hover:bg-warm-200 dark:hover:bg-warm-800">About Elyssa</a>
+            <a href="#book" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-warm-800 dark:text-warm-100 hover:bg-warm-200 dark:hover:bg-warm-800">Books & Poetry</a>
+            <a href="#publications" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-warm-800 dark:text-warm-100 hover:bg-warm-200 dark:hover:bg-warm-800">Publications</a>
+            <a href="#subscribe" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-warm-800 dark:text-warm-100 hover:bg-warm-200 dark:hover:bg-warm-800">Subscribe</a>
+            <a href="#book" class="mobile-link block w-full text-center mt-4 px-5 py-3 rounded-full bg-warm-800 text-warm-50 dark:bg-warm-200 dark:text-warm-950 font-medium text-sm">
+                Explore My Writing
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-[calc(100vh-5rem)] flex items-center py-16 lg:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-warm-200/70 dark:bg-warm-800/60 text-warm-800 dark:text-warm-200 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-feather text-warm-600 dark:text-warm-400"></i> Featured Georgia Poet
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-warm-950 dark:text-warm-50 leading-[1.15]">
+                        Some feelings are <span class="italic font-serif text-warm-700 dark:text-warm-300">too big</span> for words. 
+                        <span class="block mt-2">Until they become <span class="underline decoration-warm-400 underline-offset-8">poetry</span>.</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-warm-700 dark:text-warm-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        I'm <strong class="font-medium text-warm-900 dark:text-warm-100">Elyssa Latham</strong>, a Georgia-based poet and writer exploring the emotions that make us human. Through poetry and personal storytelling, I turn life's difficult moments into words that remind us we are never alone in what we feel.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#book" class="w-full sm:w-auto px-8 py-4 rounded-full bg-warm-900 dark:bg-warm-100 text-warm-50 dark:text-warm-950 font-medium text-base hover:bg-warm-800 dark:hover:bg-warm-200 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>Explore My Work</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#subscribe" class="w-full sm:w-auto px-8 py-4 rounded-full border-2 border-warm-800/30 dark:border-warm-200/30 hover:border-warm-800 dark:hover:border-warm-200 text-warm-900 dark:text-warm-100 font-medium text-base transition-all flex items-center justify-center gap-2">
+                            <span>Get Writing Updates</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badge -->
+                    <div class="pt-6 border-t border-warm-200 dark:border-warm-800/80 flex items-center justify-center lg:justify-start space-x-3 text-sm text-warm-600 dark:text-warm-400">
+                        <i class="fa-solid fa-book-open text-warm-500"></i>
+                        <span>Featured Book: <strong class="text-warm-900 dark:text-warm-200 font-medium">My Heart & Her Pieces</strong></span>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Stack -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative Frame Behind -->
+                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-warm-400/50 dark:border-warm-600/50 rounded-2xl transform -rotate-3"></div>
+                        <div class="absolute -bottom-4 -right-4 w-full h-full bg-warm-200 dark:bg-warm-900 rounded-2xl transform rotate-2"></div>
+                        
+                        <!-- Main Image -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-warm-200 aspect-[4/5] group">
+                            <img src="https://static.wixstatic.com/media/a11bf9_b9adac6742df401a874739077b7f1a2f~mv2.jpg/v1/fill/w_856,h_825,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a11bf9_b9adac6742df401a874739077b7f1a2f~mv2.jpg" 
+                                 alt="Elyssa Latham Portrait" 
+                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x1000/ad7e54/ffffff?text=Elyssa+Latham';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-warm-950/40 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Quote Tag -->
+                        <div class="absolute -bottom-6 -left-6 right-6 sm:right-auto bg-warm-50 dark:bg-warm-900 p-4 rounded-xl shadow-lg border border-warm-200 dark:border-warm-800 max-w-xs hidden sm:block">
+                            <p class="font-serif italic text-xs text-warm-800 dark:text-warm-200">
+                                "Every emotion has a place, and every story deserves to be felt."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Book Section -->
+    <section id="book" class="py-20 lg:py-28 bg-warm-100/60 dark:bg-warm-900/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-warm-600 dark:text-warm-400 font-semibold">Featured Book</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal mt-2 text-warm-950 dark:text-warm-50">My Heart & Her Pieces</h2>
+                <div class="w-16 h-0.5 bg-warm-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Book Showcase Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Book Cover Card Container -->
+                        <div class="bg-warm-50 dark:bg-warm-950 p-6 sm:p-8 rounded-2xl shadow-xl border border-warm-200 dark:border-warm-800 relative group">
+                            
+                            <!-- Banner Image inside Card -->
+                            <div class="rounded-xl overflow-hidden shadow-md mb-6 aspect-[4/3] bg-warm-200 relative">
+                                <img src="https://static.wixstatic.com/media/a11bf9_56c4fc74fa4845e396d3aaf1b94f2ec3~mv2.jpg/v1/fill/w_1713,h_694,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a11bf9_56c4fc74fa4845e396d3aaf1b94f2ec3~mv2.jpg" 
+                                     alt="My Heart and Her Pieces Aesthetic Cover" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/800x600/674233/ffffff?text=My+Heart+%26+Her+Pieces';">
+                            </div>
+
+                            <div class="text-center space-y-2">
+                                <h3 class="font-serif text-2xl font-bold text-warm-900 dark:text-warm-100">My Heart & Her Pieces</h3>
+                                <p class="text-xs uppercase tracking-widest text-warm-500 font-medium">By Elyssa Latham</p>
+                                
+                                <!-- Rating / Badge -->
+                                <div class="flex items-center justify-center gap-1 text-amber-500 text-xs pt-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="text-warm-600 dark:text-warm-400 font-sans ml-1 text-xs">(Poetry & Personal Reflections)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <p class="text-xl sm:text-2xl font-serif text-warm-800 dark:text-warm-200 italic leading-snug">
+                        "A poetry collection about feeling deeply, healing honestly, and learning to love yourself."
+                    </p>
+
+                    <!-- Emotion Tags -->
+                    <div class="flex flex-wrap gap-2 py-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-warm-200 dark:bg-warm-800 text-warm-800 dark:text-warm-200">Grief</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-warm-200 dark:bg-warm-800 text-warm-800 dark:text-warm-200">Sadness</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-warm-200 dark:bg-warm-800 text-warm-800 dark:text-warm-200">Anger</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-warm-200 dark:bg-warm-800 text-warm-800 dark:text-warm-200">Depression</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-warm-300 dark:bg-warm-700 text-warm-900 dark:text-warm-100 font-semibold">Self-love</span>
+                    </div>
+
+                    <div class="space-y-4 text-warm-700 dark:text-warm-300 text-base leading-relaxed">
+                        <p>
+                            In <em class="font-serif">My Heart & Her Pieces</em>, Elyssa Latham explores the emotions we often struggle to express. Through honest reflections on personal experiences and the complexities of the human heart, this collection invites readers to acknowledge their feelings, embrace their vulnerability, and discover meaning in the pieces of themselves they are still learning to understand.
+                        </p>
+                        <p class="font-serif italic text-warm-900 dark:text-warm-100 text-lg border-l-2 border-warm-400 pl-4 py-1">
+                            Because every emotion has a place, and every story deserves to be felt.
+                        </p>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#subscribe" class="px-6 py-3.5 rounded-full bg-warm-800 hover:bg-warm-700 dark:bg-warm-200 dark:text-warm-950 dark:hover:bg-warm-100 text-warm-50 font-medium text-center transition-all shadow-sm">
+                            Discover the Book
+                        </a>
+                        <div class="relative group text-center sm:text-left">
+                            <button id="findCopyBtn" class="w-full sm:w-auto px-6 py-3.5 rounded-full border border-warm-400 dark:border-warm-700 text-warm-900 dark:text-warm-100 font-medium hover:bg-warm-200/50 dark:hover:bg-warm-800/50 transition-all inline-flex items-center justify-center gap-2">
+                                <span>Find Your Copy</span>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                            <!-- Retailer Dropdown -->
+                            <div id="retailerMenu" class="hidden absolute left-0 right-0 sm:right-auto mt-2 w-full sm:w-56 bg-warm-50 dark:bg-warm-900 rounded-xl shadow-xl border border-warm-200 dark:border-warm-800 p-2 z-20 space-y-1">
+                                <a href="https://www.barnesandnoble.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 text-sm text-warm-800 dark:text-warm-200 hover:bg-warm-200 dark:hover:bg-warm-800 rounded-lg">
+                                    <i class="fa-solid fa-store text-warm-600"></i> Barnes & Noble
+                                </a>
+                                <a href="https://www.amazon.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 text-sm text-warm-800 dark:text-warm-200 hover:bg-warm-200 dark:hover:bg-warm-800 rounded-lg">
+                                    <i class="fa-brands fa-amazon text-warm-600"></i> Amazon
+                                </a>
+                                <a href="https://www.booksamillion.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2 text-sm text-warm-800 dark:text-warm-200 hover:bg-warm-200 dark:hover:bg-warm-800 rounded-lg">
+                                    <i class="fa-solid fa-book text-warm-600"></i> Books-A-Million
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability Notice -->
+                    <p class="text-xs text-warm-500 dark:text-warm-400 pt-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-info"></i> Available through Barnes & Noble, Amazon, and Books-A-Million.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Elyssa Section -->
+    <section id="about" class="py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Image Showcase -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4 relative">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden shadow-lg bg-warm-200 aspect-[3/4]">
+                                <img src="https://static.wixstatic.com/media/a11bf9_e9406acb49244ca89162297d498ea0fa~mv2.jpg/v1/crop/x_0,y_10,w_1365,h_1187/fill/w_920,h_800,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0538_edited.jpg" 
+                                     alt="Elyssa Latham Writing" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x800/9b6845/ffffff?text=Elyssa+Latham';">
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="rounded-2xl overflow-hidden shadow-lg bg-warm-200 aspect-[3/4]">
+                                <img src="https://static.wixstatic.com/media/a11bf9_979d9bd0ac914be9b7ab4bc0de4e0b7e~mv2.jpg/v1/fill/w_856,h_714,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a11bf9_979d9bd0ac914be9b7ab4bc0de4e0b7e~mv2.jpg" 
+                                     alt="Elyssa Latham Poet Portrait" 
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x800/7e503a/ffffff?text=Elyssa+Portrait';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Bio Content -->
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-warm-600 dark:text-warm-400 font-semibold">About Elyssa</span>
+                    
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-warm-950 dark:text-warm-50 leading-tight">
+                        A love of words. <br>
+                        <span class="italic font-serif text-warm-700 dark:text-warm-300">A life shaped by stories.</span>
+                    </h2>
+
+                    <div class="space-y-4 text-warm-700 dark:text-warm-300 text-base leading-relaxed">
+                        <p>
+                            Elyssa Latham has always found comfort in books and the power of written words. What began with childhood reading and school journals gradually grew into a passion for poetry and storytelling.
+                        </p>
+                        <p>
+                            Encouraged by a teacher who recognized her talent, Elyssa began to see writing as more than a hobby. It became a way to explore her experiences, express difficult emotions, and connect with others through the written word.
+                        </p>
+                        <p>
+                            Today, she writes to give a voice to feelings that are often left unspoken, reminding readers that vulnerability is human and that meaningful art can grow from even the hardest experiences.
+                        </p>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#subscribe" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-warm-200 dark:bg-warm-800 text-warm-900 dark:text-warm-100 font-medium hover:bg-warm-300 dark:hover:bg-warm-700 transition-colors">
+                            <span>Get to Know Elyssa</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Beyond the Book (Publications) Section -->
+    <section id="publications" class="py-20 lg:py-28 bg-warm-100/60 dark:bg-warm-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs uppercase tracking-widest text-warm-600 dark:text-warm-400 font-semibold">Beyond The Book</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-warm-950 dark:text-warm-50">Words that reach beyond the page.</h2>
+                <p class="text-warm-700 dark:text-warm-300 font-light text-lg">
+                    Elyssa's writing extends into literary publications, poetry, and creative work that explores identity, relationships, personal growth, and the realities of everyday life.
+                </p>
+            </div>
+
+            <!-- Highlight Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Highlight 1 -->
+                <div class="bg-warm-50 dark:bg-warm-950 p-8 rounded-2xl border border-warm-200 dark:border-warm-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-warm-200 dark:bg-warm-800 flex items-center justify-center text-warm-700 dark:text-warm-300 text-xl">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-warm-900 dark:text-warm-100">National PTA Reflections Contest</h3>
+                        <p class="text-warm-600 dark:text-warm-400 text-sm leading-relaxed">
+                            Two-time winner recognized for her evocative works <em class="font-serif">"Hero Within"</em> and <em class="font-serif">"What Is My Story?"</em>
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-warm-200/60 dark:border-warm-800/60 flex items-center text-xs text-warm-500 font-medium">
+                        <i class="fa-solid fa-award mr-1.5"></i> Recognized Excellence
+                    </div>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="bg-warm-50 dark:bg-warm-950 p-8 rounded-2xl border border-warm-200 dark:border-warm-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-warm-200 dark:bg-warm-800 flex items-center justify-center text-warm-700 dark:text-warm-300 text-xl">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-warm-900 dark:text-warm-100">Hey Young Writer</h3>
+                        <p class="text-warm-600 dark:text-warm-400 text-sm leading-relaxed">
+                            Contributing writer, including her notable debut piece <em class="font-serif">"Her Versus Me"</em> exploring identity and self-discovery.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-warm-200/60 dark:border-warm-800/60 flex items-center text-xs text-warm-500 font-medium">
+                        <i class="fa-solid fa-newspaper mr-1.5"></i> Contributing Writer
+                    </div>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="bg-warm-50 dark:bg-warm-950 p-8 rounded-2xl border border-warm-200 dark:border-warm-800 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-warm-200 dark:bg-warm-800 flex items-center justify-center text-warm-700 dark:text-warm-300 text-xl">
+                            <i class="fa-solid fa-hands-holding-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-warm-900 dark:text-warm-100">Young Voices for Change</h3>
+                        <p class="text-warm-600 dark:text-warm-400 text-sm leading-relaxed">
+                            Featured contributor with the moving poem <em class="font-serif">"Cruel Blindness"</em> addressing social awareness and empathy.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-warm-200/60 dark:border-warm-800/60 flex items-center text-xs text-warm-500 font-medium">
+                        <i class="fa-solid fa-feather-pointed mr-1.5"></i> Featured Poet
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center space-y-6">
+                <p class="text-warm-700 dark:text-warm-300 max-w-xl mx-auto italic font-serif">
+                    "From personal reflections to published poetry, each piece offers another glimpse into the experiences and emotions that shape us."
+                </p>
+                <a href="#subscribe" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-warm-800 text-warm-50 dark:bg-warm-200 dark:text-warm-950 font-medium hover:bg-warm-700 transition-all">
+                    <span>Explore Publications & Poetry</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- A Note To The Reader Section -->
+    <section class="py-20 lg:py-24 relative overflow-hidden bg-warm-900 text-warm-100 dark:bg-warm-950">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center space-y-8">
+            <div class="inline-block p-3 rounded-full bg-warm-800/80 border border-warm-700 text-warm-300">
+                <i class="fa-solid fa-heart text-xl"></i>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl italic font-normal leading-tight text-warm-50">
+                "You don't have to hide what you feel."
+            </h2>
+
+            <div class="space-y-4 text-warm-200 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+                <p>
+                    Sometimes, the first step toward understanding ourselves is finding the words for what we're going through.
+                </p>
+                <p>
+                    Elyssa writes for the moments when emotions feel complicated, when healing isn't straightforward, and when we need a reminder that feeling deeply is part of being human.
+                </p>
+            </div>
+
+            <div class="pt-4 border-t border-warm-800 max-w-md mx-auto">
+                <p class="font-serif text-warm-300 italic text-sm">
+                    If her words help you feel seen, understood, or a little less alone, then the story has found its purpose.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Connected / Substack Section -->
+    <section id="subscribe" class="py-20 lg:py-28 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-warm-200/70 dark:bg-warm-900/70 rounded-3xl p-8 sm:p-12 lg:p-16 border border-warm-300/60 dark:border-warm-800 text-center space-y-6 relative overflow-hidden shadow-lg">
+                
+                <span class="text-xs uppercase tracking-widest text-warm-600 dark:text-warm-400 font-semibold">Stay Connected</span>
+                
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-warm-950 dark:text-warm-50">
+                    More words, more stories, more to discover.
+                </h2>
+
+                <p class="text-warm-700 dark:text-warm-300 max-w-xl mx-auto font-light text-base sm:text-lg">
+                    Follow Elyssa's writing journey and be among the first to hear about new publications, upcoming projects, and future books.
+                </p>
+
+                <!-- Subscription Form simulation -->
+                <form id="subscribeForm" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 pt-4" onsubmit="event.preventDefault(); handleSubscribe();">
+                    <input type="email" id="subscriberEmail" placeholder="Enter your email address..." required 
+                           class="flex-1 px-5 py-3.5 rounded-full bg-warm-50 dark:bg-warm-950 border border-warm-300 dark:border-warm-700 text-warm-900 dark:text-warm-100 placeholder-warm-400 focus:outline-none focus:ring-2 focus:ring-warm-500 text-sm">
+                    <button type="submit" class="px-7 py-3.5 rounded-full bg-warm-900 dark:bg-warm-100 text-warm-50 dark:text-warm-950 font-medium hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors text-sm flex items-center justify-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-bookmark text-xs"></i>
+                        <span>Subscribe on Substack</span>
+                    </button>
+                </form>
+
+                <div id="subscribeSuccess" class="hidden text-emerald-700 dark:text-emerald-400 text-sm font-medium pt-2">
+                    <i class="fa-solid fa-check-circle mr-1"></i> Thank you for subscribing! Welcome to the reader community.
+                </div>
+
+                <p class="text-xs text-warm-500 dark:text-warm-400 pt-2">
+                    No spam, ever. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warm-950 text-warm-300 py-12 border-t border-warm-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                
+                <!-- Left Brand -->
+                <div class="text-center md:text-left space-y-1">
+                    <h3 class="font-serif text-2xl font-bold text-warm-100 tracking-tight">ELYSSA LATHAM</h3>
+                    <p class="text-xs text-warm-400 uppercase tracking-widest">Poet & Writer</p>
+                </div>
+
+                <!-- Nav Links -->
+                <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium text-warm-300">
+                    <a href="#home" class="hover:text-warm-100 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-warm-100 transition-colors">About</a>
+                    <a href="#book" class="hover:text-warm-100 transition-colors">Books & Poetry</a>
+                    <a href="#publications" class="hover:text-warm-100 transition-colors">Publications</a>
+                    <a href="#subscribe" class="hover:text-warm-100 transition-colors">Substack</a>
+                </nav>
+
+                <!-- Socials & Copyright -->
+                <div class="text-center md:text-right space-y-2">
+                    <div class="flex justify-center md:justify-end space-x-4 text-warm-400 text-lg">
+                        <a href="https://www.elyssalatham.com/" target="_blank" rel="noopener" class="hover:text-warm-100 transition-colors" title="Official Website">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="#subscribe" class="hover:text-warm-100 transition-colors" title="Substack">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="#book" class="hover:text-warm-100 transition-colors" title="Books">
+                            <i class="fa-solid fa-book"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-warm-500">
+                        &copy; 2026 Elyssa Latham. All rights reserved.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactivity Script -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        themeToggle?.addEventListener('click', toggleTheme);
+        mobileThemeToggle?.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Find Copy Retailer Dropdown Toggle
+        const findCopyBtn = document.getElementById('findCopyBtn');
+        const retailerMenu = document.getElementById('retailerMenu');
+
+        findCopyBtn?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            retailerMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!retailerMenu.contains(e.target) && !findCopyBtn.contains(e.target)) {
+                retailerMenu.classList.add('hidden');
+            }
+        });
+
+        // Subscription form response simulation
+        function handleSubscribe() {
+            const emailInput = document.getElementById('subscriberEmail');
+            const successMsg = document.getElementById('subscribeSuccess');
+            if (emailInput.value) {
+                successMsg.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
